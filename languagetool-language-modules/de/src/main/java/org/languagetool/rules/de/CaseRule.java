@@ -133,6 +133,14 @@ public class CaseRule extends Rule {
         pos("PKT")
     ),
     Arrays.asList(
+        // um ihren eigenen Glauben an das Gute, Wahre und Schöne zu stärken.
+        token("das"),
+        posRegex("SUB:.*"),
+        token(","),
+        regex("[A-ZÄÖÜ][a-zäöü]+"),
+        regex("und|oder")
+    ),
+    Arrays.asList(
       token("Treu"),
       token("und"),
       token("Glauben")
@@ -169,6 +177,13 @@ public class CaseRule extends Rule {
         // "... wie ich das prüfen würde."
         posRegex("VER:INF.*"),
         posRegex("VER:AUX:.:(SIN|PLU)(:KJ2)?")
+    ),
+    Arrays.asList(
+       // "... etwas Interessantes und Spannendes suchte"
+       regex("etwas|nichts|viel|wenig"),
+       regex("[A-ZÄÖÜ].*es"),
+       regex("und|oder|,"),
+       regex("[A-ZÄÖÜ].*es")
     )
   );
 
@@ -212,13 +227,13 @@ public class CaseRule extends Rule {
   }
 
   private static final Set<String> UNDEFINED_QUANTIFIERS = new HashSet<>(Arrays.asList(
-      "viel", "nichts", "wenig", "zuviel" ));
+      "viel", "nichts", "wenig", "zuviel"));
 
   private static final Set<String> INTERROGATIVE_PARTICLES = new HashSet<>(Arrays.asList(
-      "was", "wodurch", "wofür", "womit", "woran", "worauf", "woraus", "wovon", "wie" ));
+      "was", "wodurch", "wofür", "womit", "woran", "worauf", "woraus", "wovon", "wie"));
 
   private static final Set<String> POSSESSIVE_INDICATORS = new HashSet<>(Arrays.asList(
-      "einer", "eines", "der", "des", "dieser", "dieses" ));
+      "einer", "eines", "der", "des", "dieser", "dieses"));
 
   /*
    * These are words that Morphy only knows as non-nouns (or not at all).
@@ -247,7 +262,6 @@ public class CaseRule extends Rule {
     "Beschäftigter",
     "Beschäftigte",
     "Beschäftigten",
-    "Üblichen",
     "Bekannter",
     "Bekannte",
     "Tel",  // Tel. = Telefon
@@ -314,6 +328,7 @@ public class CaseRule extends Rule {
     "besonderes",   // je nach Kontext groß (TODO): "etwas Besonderes" 
     "Biss",
     "De",    // "De Morgan" etc
+    "Diesseits", // "im Diesseits"
     "Dr",
     "Durcheinander",
     "Eindrücke",
@@ -325,6 +340,7 @@ public class CaseRule extends Rule {
     "Fraß",
     "Für",      // "das Für und Wider"
     "Genüge",
+    "Gefallen", // Gefallen finden
     "Gläubiger",
     "Goldener",    // Goldener Schnitt
     "Guten",    // das Kap der Guten Hoffnung
@@ -368,8 +384,10 @@ public class CaseRule extends Rule {
     "Mrs",
     "Nachfrage",
     "Nachts",   // "des Nachts", "eines Nachts"
+    "Nachspann",
     "Nähte",
     "Nähten",
+    "Narkoseverfahren",
     "Neuem",
     "Nr",
     "Nutze",   // zu Nutze
@@ -392,11 +410,13 @@ public class CaseRule extends Rule {
     "Schwärme",
     "Schwarzes",    // Schwarzes Brett
     "Sie",
+    "Skype",
     "Spitz",
     "St",   // Paris St. Germain
     "Stereotyp",
     "Störe",
     "Tausend",   // je nach Kontext groß (TODO)
+    "Tischende",
     "Toter",
     "tun",   // "Sie müssen das tun"
     "Übrigen",   // je nach Kontext groß (TODO), z.B. "im Übrigen"
@@ -417,6 +437,7 @@ public class CaseRule extends Rule {
     "Zeche",
     "Zusage",
     "Zwinge",
+    "Zirkusrund",
     "Tertiär",  // geologischer Zeitabschnitt
 
     "Erster",   // "er wurde Erster im Langlauf"
@@ -675,6 +696,7 @@ public class CaseRule extends Rule {
         potentiallyAddLowercaseMatch(ruleMatches, tokens[i], prevTokenIsDas, token, nextTokenIsPersonalOrReflexivePronoun);
       }
       prevTokenIsDas = nounIndicators.contains(tokens[i].getToken().toLowerCase());
+      AnalyzedTokenReadings lowercaseReadings = tagger.lookup(token.toLowerCase());
       if (hasNounReading(analyzedToken)) {  // it's the spell checker's task to check that nouns are uppercase
         // "Man müsse Überlegen, wie man das Problem löst."
         boolean isPotentialError = i > 1 && i < tokens.length - 3
@@ -683,6 +705,11 @@ public class CaseRule extends Rule {
                                    && tokens[i-1].hasPartialPosTag("VER:MOD:")
                                    && !tokens[i-1].hasLemma("mögen")
                                    && !tokens[i+3].getToken().equals("zum");
+        isPotentialError |= i > 1 && tokens[i-1] != null
+                                  && lowercaseReadings != null
+                                  && analyzedToken.hasPosTag("SUB:NOM:SIN:NEU:INF")
+                                  && lowercaseReadings.hasPosTag("PA2:PRD:GRU:VER")
+                                  && hasPartialTag(tokens[i-1], "SUB", "EIG");
         if (!isPotentialError) {
           continue;
         }
@@ -693,7 +720,6 @@ public class CaseRule extends Rule {
     	// "Viele Minderjährige sind" but not "Das wirklich Wichtige Verfahren ist"
         continue;  
       }
-      AnalyzedTokenReadings lowercaseReadings = tagger.lookup(token.toLowerCase());
       if (analyzedToken.getAnalyzedToken(0).getPOSTag() == null && lowercaseReadings == null) {
         continue;
       }
@@ -864,7 +890,7 @@ public class CaseRule extends Rule {
           }
         }
       }
-      return (prevToken != null && ("irgendwas".equals(prevTokenStr) || "aufs".equals(prevTokenStr) || "als".equals(prevTokenStr) || isNumber(prevTokenStr))) ||
+      return (prevToken != null && ("irgendwas".equals(prevTokenStr) || "aufs".equals(prevTokenStr) || isNumber(prevTokenStr))) ||
          (hasPartialTag(prevToken, "ART", "PRO:") && !(prevToken.getReadings().size() == 1 && prevToken.hasPartialPosTag("PRO:PER:NOM:"))  && !prevToken.hasPartialPosTag(":STD")) ||  // "die Verurteilten", "etwas Verrücktes", "ihr Bestes"
          (hasPartialTag(prevPrevPrevToken, "ART") && hasPartialTag(prevPrevToken, "PRP") && hasPartialTag(prevToken, "SUB")) || // "die zum Tode Verurteilten"
          (hasPartialTag(prevPrevToken, "PRO:", "PRP") && hasPartialTag(prevToken, "ADJ", "ADV", "PA2", "PA1")) ||  // "etwas schön Verrücktes", "mit aufgewühltem Innerem"
@@ -952,9 +978,13 @@ public class CaseRule extends Rule {
     // ignore "die Ausgewählten" but not "die Ausgewählten Leute":
     for (AnalyzedToken reading : tokens[i].getReadings()) {
       String posTag = reading.getPOSTag();
-      // ignore "die Ausgewählten" but not "die Ausgewählten Leute":
       if ((posTag == null || posTag.contains("ADJ")) && !hasNounReading(nextReadings)) {
-        return true;
+        if(posTag == null && hasPartialTag(lowercaseReadings, "PRP:LOK", "PA2:PRD:GRU:VER")) {
+          // skip to avoid a false true for, e.g. "Die Zahl ging auf Über 1.000 zurück."/ "Dies gilt schon lange als Überholt."
+          // but not for "Er versuchte, Neues zu wagen."
+        } else {
+          return true;
+        }
       }
     }
 

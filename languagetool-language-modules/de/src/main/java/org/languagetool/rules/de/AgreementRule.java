@@ -136,6 +136,30 @@ public class AgreementRule extends Rule {
     Arrays.asList(
         new PatternTokenBuilder().token("mehrere").build(), // "mehrere Verwundete" http://forum.languagetool.org/t/de-false-positives-and-false-false/1516
         new PatternTokenBuilder().pos("SUB:NOM:SIN:FEM:ADJ").build()
+    ),
+    Arrays.asList(
+        new PatternTokenBuilder().token("allen").build(),
+        new PatternTokenBuilder().token("Besitz").build()
+    ),
+    Arrays.asList(
+        new PatternTokenBuilder().tokenRegex("die|den|[md]einen?").build(),
+        new PatternTokenBuilder().token("Top").build(),
+        new PatternTokenBuilder().tokenRegex("\\d+").build()
+    ),
+    Arrays.asList( //"Unter diesen rief das großen Unmut hervor."
+        new PatternTokenBuilder().posRegex("VER:3:SIN:.*").build(),
+        new PatternTokenBuilder().token("das").build(),
+        new PatternTokenBuilder().posRegex("ADJ:AKK:.*").build(),
+        new PatternTokenBuilder().posRegex("SUB:AKK:.*").build(),
+        new PatternTokenBuilder().pos("ZUS").build(),
+        new PatternTokenBuilder().pos("SENT_END").build()
+    ),
+    Arrays.asList( // "Bei mir löste das Panik aus."
+        new PatternTokenBuilder().posRegex("VER:3:SIN:.*").build(),
+        new PatternTokenBuilder().token("das").build(),
+        new PatternTokenBuilder().posRegex("SUB:AKK:.*").build(),
+        new PatternTokenBuilder().pos("ZUS").build(),
+        new PatternTokenBuilder().pos("SENT_END").build()
     )
   );
 

@@ -12,10 +12,10 @@ Arabische[nr]? Frühlings?
 (Arktische|Atlantische|Pazifische|Stille)[rn]? Ozeans?
 Auswärtige[mns]? Amte?s?
 Bayerische[sn] Staats.*|Landesamt(es|s)?
-Bayerischen? Staats.*|Verdienstmedaille|Rundfunks?|Ministerpräsident(en)?
+Bayerischen? Staats.*|Verdienstmedaille|Rundfunks?|Ministerpräsident(en)?|Walds?
 Bayerische[nr]? Hof
 (Bekennend|Evangelisch|Katholisch)en? Kirche
-Blaue[nr]? Reiters?
+Blaue[nr]? Reiters?|Band(s|es)?
 Bögen
 Braune[rn]? Zwerge?s?
 Britischen? Inseln
@@ -52,7 +52,7 @@ Ferne[rn]? Ostens?
 Frankfurter Allgemeinen?
 Freien? Universität
 Geheimen? Staatspolizei
-Gelben? Karten?
+Gelben? Karten?|Trikots?|Rüben?
 Gelbe[nr] Fluss(es)?|Engel[ns]?|Seiten?|Sacks?
 Gelobten? Lands?
 Gewerbetreibende[rn]?
@@ -65,7 +65,7 @@ Goldene Zwanziger
 Goldene[sn]? Zeitalters?|Ehrenzeichens?
 Gordische[nr]? Knotens?
 Göttlichen? Komödie
-Großen? Antillen|Preis|Koalition|Mauer|Wagen|Zapfenstreichs?
+Großen? Antillen|Preis|Koalition|Kreisstadt|Mauer|Wagen|Zapfenstreichs?
 Großen Bären|Kurfürsten|Teiche?s|Wagens
 Großer? Bär|Kurfürst|Teich
 Große[ns]? (Bundesv|V)erdienstkreuz
@@ -74,7 +74,9 @@ Groß und Klein
 Großwild
 Grüne[rn] Punkts?
 Hängenden Gärten
+Großes vor
 Haute Couture
+Heiligen? Drei Königen?
 Heiligen Römischen Reich|Reiche?s
 Heilige Römische Reich
 Heiliges Römisches Reich
@@ -84,12 +86,12 @@ Hohen Rate?s|Kommissars|Vertreters
 [iI]m Guten wie im Schlechten
 [iI]m Hier und Jetzt
 [iI]m Innere?n (eine[rs]|de[rs])
-[iI]m Nirgendwo|Weiteren
+[iI]m Nirgendwo|Weiteren|Schweiße
 Indischen Ozeans
 Indische[nr]? Ozean
 Inneren? Medizin
 Inoffizielle[rn]? Mitarbeiter[sn]?
-Internationalen? Filmfestspielen?|Atomenergie(-Organisation|behörde)|Fernmeldeunion|Komitees?
+Internationalen? Filmfestspielen?|Atomenergie(-Organisation|behörde|organisation)|Fernmeldeunion|Komitees?
 Internationale[nr]? Währungsfonds|(Seeg|Strafg|Sportg|Militärg|G)erichtshofs?
 Internationalen (Seeg|Strafg|Sportg|G)erichtshofe?s
 Internationalen? Olympischen? Komitees?
@@ -106,16 +108,19 @@ Katholischen? Liga|Universität
 kaum Neues
 Kleinen? Antillen
 Kleiner? Bär
-Kommunistischen? Partei
-Künstliche[rn]? Intelligenz
+(Kommunist|Sozialdemokrat)ischen? Partei
+#Künstliche[rn]? Intelligenz -- according to Duden this is no exception K89
 Las Palmas
 Letzte[nr]? Wille
 Letzten Willens
 Macht Stehende
+Manschetten?
 Medizinischen? Hochschule|Fakultät
 Militärische[rn]? Abschirmdiensts?
 Mittlere[nr]? Ostens?
+Moby Dick
 Mittwochfrüh
+[Mm]it Ach und
 (Mon|Diens|Donners|Frei|Sams|Sonn)tagfrüh
 Muttersprachler[ns]?
 Nahe[nr]? Ostens?
@@ -140,7 +145,7 @@ Römischen Reiche?s|Verträgen?
 Römischen Reiches Deutscher Nation
 Römische[ns]? Reich
 Römische Reich Deutscher Nation
-Roten? Karten?|Khmer|Liste|Armee|Platz
+Roten? Beete|Karten?|Khmer|Liste|Armee|Platz|Rüben?
 Rote[ns]? Kreuz|Rathaus
 Roten Meeres|Planeten|Kreuzes
 Rote[nr]? Riesen?
@@ -160,27 +165,30 @@ Schwarze[mns]? Brett|Meer|Loch
 Seltene[nr]? Erden
 Single Malt
 Sozialistischen? Sowjetrepublik(en)?|(Einheits)?[pP]artei
-Spanischen? Grippe|Erbfolgekriegs?|Bürgerkriegs?|Niederlande|Treppe|Fliege
+Spanischen? Grippe|Erbfolgekriegs?|Bürgerkriegs?|Niederlande|Treppe|Fliege|Reitschule
 Staatlichen? Universität
 Staatsangehörige[rn]?
-Statistische[mn]? Bundesamt(s|es)?
+Statistische[mns]? Bundesamt(s|es)?
 Statistische[rn]?|Theoretische[rn]? Physik
 Steinerne[sn]? Meer
 Steinernen? Brücke
 Süddeutschen? Zeitung
 Technische[ns]? Hilfswerks?
-Technischen? Hochschulen?|Universität|Fachhochschule
+Technischen? (Fachh|H)ochschulen?|Universität
 Tel Aviv
 (Tschechische|Türkische)n? Republik
+Trank
 Unbefleckten? Empfängnis
 Unter den Linden
 Vereinigten? Arabischen? Emirate
 Vereinten Nationen
 vorgestern|gestern|heute|morgen|übermorgen Früh
-Weißer Zwerge?
+Weh und Ach
+Weiße[nr]? Zwerge?|Sonntags?
 Wenn und Aber
 Westfälischen? Frieden?|Pforte
 Westfälischen Friedens
+Wilde[nr]? Westens?
 Wissenschaftlichen? Dienst
 Wissenschaftlichen Dienste?s
 Zehn Geboten?
