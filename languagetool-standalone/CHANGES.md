@@ -2,9 +2,16 @@
 
 ## 3.8-SNAPSHOT (release planned for 2017-06-27)
 
+#### English
+  * added and improved rules
+
 #### German
+  * added and improved rules
   * improved messages for old spelling variants, e.g. `Kuß` now suggests only `Kuss` and
     also has a message explaining the user that `Kuß` is an old spelling
+
+#### Polish
+   * added rules
 
 #### HTTP API
   * The deprecated AfterTheDeadline mode has been removed
@@ -12,6 +19,11 @@
 #### Java API
   * Some deprecated methods and classes have been removed.
 
+#### Internal
+  * `spelling.txt` allows multi-word entries: the words/tokens (separated by " ") of one
+    line are converted to a `DisambiguationPatternRule` in which each word is as a case-sensitive
+    and non-inflected `PatternToken` (result: the entire multi-word entry is ignored by
+    the spell checker)
 
 ## 3.7 (2017-03-27)
 

@@ -41,6 +41,31 @@ USA
     <!-- Possible typo -->
     <!-- ====================================================================== -->
     <category id="TYPOS" name="Possible Typo" type="misspelling">
+        <rule id="AS_FOLLOW_AS_FOLLOWS" name="'as follow' (as follows)">
+         <pattern>
+          <marker>
+          <token>as</token>
+          <token>follow</token>
+          </marker>
+          <token regexp='yes'>[\.:,—\-–]</token>
+         </pattern>
+         <message>Did you mean <suggestion>as follows</suggestion>?</message>
+         <short>Possible typo</short>
+         <example correction='as follows'>We can elaborate this distinction <marker>as follow</marker>.</example>         
+        </rule>
+        <rule id="BY_PASSIVE_PARTICIPLE_BE" name="'by' + passive participle (be)">
+         <pattern>
+          <token postag='MD'></token>
+          <marker>
+          <token>by</token>
+          </marker>
+          <token postag='JJ.?|VBN' postag_regexp='yes'><exception postag='DT'></exception><exception>morning</exception></token>
+         </pattern>
+         <message>Did you mean <suggestion>be</suggestion>?</message>
+         <short>Possible typo</short>
+         <example correction='be'>This can <marker>by</marker> consistent  with usability constraints.</example>
+         <example>George isn't going to lose any votes that he already lost by trying to ban gay marriage, but Kerry might by supporting it.</example>
+        </rule>
         <rulegroup id="MISS_VERB" name="miss use (misuse)">
             <rule>
                 <pattern>
@@ -2805,7 +2830,7 @@ USA
                 </antipattern>
                 <antipattern>
                     <token regexp="yes">human|civil</token>
-                    <token>rights</token>
+                    <token regexp="yes">rights|resources</token>
                 </antipattern>
                 <antipattern>
                     <token regexp="yes">(anti-)?nuclear|(chem|biolog)ical</token>
@@ -2839,6 +2864,7 @@ USA
                 <example>The functions sine and cosine take values between -1 and 1.</example>
                 <example>That baby does nothing but cry.</example>
                 <example>The anti-nuclear weapons movement went into decline for some years.</example>
+                <example>The incident resulted in a human resources complaint.</example>
             </rule>
             <rule>
                 <antipattern>
@@ -8145,7 +8171,7 @@ USA
                 <pattern>
                     <token><exception regexp="yes">’|'|division|class|category|zone|formula|type|influenza|hepatitis|series</exception><exception postag="CD"/></token>
                     <token regexp="yes">a|an</token>
-                    <token max="2" postag="JJ"><exception regexp="yes">few|dozen|time</exception><exception postag="CD"/></token>
+                    <token max="2" postag="JJ"><exception regexp="yes">few|(half-)?dozen|time</exception><exception postag="CD"/></token>
                     <marker>
                         <token postag="NNS|NNPS" postag_regexp="yes"><exception postag="NN:.*|NN|VBZ|NNP|CC|CD" postag_regexp="yes"/><exception regexp="yes">sometimes|savings|headquarters|innings</exception></token>
                     </marker>
@@ -10423,6 +10449,12 @@ USA
                 <token>use</token>
                 <token>to</token>
             </antipattern>
+            <antipattern>
+                <token postag="MD"/>
+                <token postag="RB"/>
+                <token>use</token>
+                <token>to</token>
+            </antipattern>
             <pattern>
                 <token><exception postag="MD"/></token>
                 <marker>
@@ -10436,6 +10468,7 @@ USA
             <example>Tom didn't use to drink so much.</example>
             <example correction="used">He <marker>use</marker> to believe this.</example>
             <example correction="used">Aethera <marker>use</marker> to use this.</example>
+            <example>This could set a dangerous precedent that they would surely use to target other journalists.</example>
         </rule>
         <rule id="MORE_A_JJ" name="Word order: 'more a ...' instead of 'a more ...'">
             <pattern>
@@ -11455,10 +11488,10 @@ USA
             <message>Possible agreement error. The noun '<match no="3"/>' seems to be countable, so consider using: <suggestion suppress_misspelled="yes" ><match no="3" suppress_misspelled="yes" postag="NNS|NNPS" postag_regexp="yes"/></suggestion>.</message>
             <short>Grammatical problem</short>
             <example correction="books">I have five <marker>book</marker>.</example>
+            <example>I have five <marker>books</marker>.</example>
             <example correction="chapters">Additionally, there are over 500 college and university <marker>chapter</marker>.</example>
             <example correction="chapters">There are 500 college and university <marker>chapter</marker>.</example>
-            <example>1777 舑 American Revolutionary War: British forces abandon the Siege of Fort Stanwix...</example>
-            <example>I have <marker>ten books</marker>.</example>
+            <example>1777 American Revolutionary War: British forces abandon the Siege of Fort Stanwix...</example>
             <example>I have <marker>one bottle</marker> of wine.</example>
             <example>Exactly 1 hour!</example>
             <example>It was 30 cm long.</example>
@@ -11496,6 +11529,8 @@ USA
             <example>Since then the corporate headquarters have moved to New York City at 1 Park Avenue in Manhattan, before moving to the Financial District to the former JP Morgan Chase headquarters at 4 New York Plaza.</example>
             <example>It's ten past six.</example>
             <example>The price of rice rose by three percent.</example>
+            <example>The MOS Technology 6502 processor is an 8-bit microprocessor.</example>
+            <example>Figure 1 shows a MOS 6502 processor in a DIP-40 plastic package.</example>
         </rule>        
         <rule id="INCORRECT_POSSESSIVE_FORM_AFTER_A_NUMBER" name="Incorrect possessive form after a number">
         <antipattern> <!-- separate rule: CD_WEEK -->
@@ -12754,7 +12789,7 @@ USA
                 <pattern>
                     <marker>
                         <token regexp="yes">a|an|the</token>
-                        <token postag="DT" regexp="yes">a|an|the</token>
+                        <token postag="DT" regexp="yes">a|an|the|each</token>
                     </marker>
                     <token><exception regexp="yes">'|\.</exception></token>
                 </pattern>
@@ -18796,14 +18831,20 @@ USA
             <example correction="days when">Do you remember the happy <marker>days where</marker> we were together</example>
         </rule>
         <rule id="PROFANITY" name="Profanity">
+            <antipattern>
+                <token regexp="yes">spic|spick</token>
+                <token>and</token>
+                <token>span</token>
+            </antipattern>
             <pattern>
-                <token inflected="yes" regexp="yes">shit|piss|fuck|cunt|cocksucker|motherfucker|tits|fart|turd|twat</token>
+                <token inflected="yes" regexp="yes">cocksucker|coon|cunt|dago|fart|fuck|motherfucker|nigger|piss|shit|spic|spick|spik|tits|turd|twat<exception postag="NNP"></exception></token>
             </pattern>
             <message>This word is considered offensive.</message>
             <url>https://en.wikipedia.org/wiki/Profanity</url>
             <short>Profanity</short>
             <example type="incorrect" correction=""><marker>Piss</marker> off!</example>
             <example type="correct">Go away!</example>
+            <example type="correct">Carleton S. <marker>Coon</marker> was an American anthropologist (https://en.wikipedia.org/wiki/Carleton_S._Coon).</example>
         </rule>
         <rule id="NEEDS_FIXED" name="'Needs fixed' type construction">
             <pattern>
@@ -22317,7 +22358,7 @@ USA
                 <pattern>
                     <token  inflected="yes" regexp="yes">homogenise|homogenize</token>
                 </pattern>
-                <message>Homogenise is a rather unusual word in English (only two hits in the British National Corpus) and is most commonly used with reference to milk. 'Homogeneous' and 'homogeneously' are much more common, but they are more often found in the sciences and social sciences, and are over-used in our texts. Alternatives: <suggestion><match no="1" postag="VB.*">standardise</match></suggestion>, uniform.</message>
+                <message>Homogenise is a rather unusual word in English (only two hits in the British National Corpus) and is most commonly used with reference to milk. 'Homogeneous' and 'homogeneously' are much more common, but they are more often found in the sciences and social sciences, and are over-used in our texts. Alternatives: <suggestion><match no="1" regexp_match="homogeni[sz]" regexp_replace="standardis"/></suggestion>, uniform.</message>
                 <url>http://euenglish.webs.com/</url>
                 <short>EU English: homogenise/homogeneous/homogeneously</short>
                 <example type="incorrect" correction="standardise">Member States can work together towards shared goals without seeking to <marker>homogenize</marker> their inherited policy regimes.</example>

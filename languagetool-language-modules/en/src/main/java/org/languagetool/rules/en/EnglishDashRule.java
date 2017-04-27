@@ -17,7 +17,7 @@
  * USA
  */
 
-package org.languagetool.rules.pl;
+package org.languagetool.rules.en;
 
 import org.languagetool.Language;
 import org.languagetool.rules.AbstractDashRule;
@@ -25,19 +25,24 @@ import org.languagetool.rules.AbstractDashRule;
 import java.io.IOException;
 
 /**
- * Check for compounds written with dashes instead of hyphens (for example, Rabka — Zdrój).
- * @since 3.6
+ * Check for compounds written with dashes instead of hyphens.
+ * @since 3.8
  */
-public class DashRule extends AbstractDashRule {
+public class EnglishDashRule extends AbstractDashRule {
 
-  public DashRule(Language lang) throws IOException {
-    super("/pl/compounds.txt",
-        "Błędne użycie myślnika zamiast łącznika. Poprawnie: ", lang);
+  public EnglishDashRule(Language lang) throws IOException {
+    super("/en/compounds.txt",
+        "A dash was used instead of a hyphen. Did you mean: ", lang);
+  }
+
+  @Override
+  public String getId() {
+    return "EN_DASH_RULE";
   }
 
   @Override
   public String getDescription() {
-    return "Sprawdza, czy wyrazy pisane z łącznikiem zapisano z myślnikami (np. „Lądek — Zdrój” zamiast „Lądek-Zdrój”).";
+    return "Checks if hyphenated words were spelled with dashes (e.g., 'T — shirt' instead 'T-shirt').";
   }
 
 }

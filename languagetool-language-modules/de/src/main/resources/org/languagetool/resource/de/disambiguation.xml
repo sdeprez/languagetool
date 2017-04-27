@@ -169,6 +169,449 @@ Copyright © 2013 Markus Brenneis, Daniel Naber, Jan Schreiber
         <disambig action="add"><wd pos="PKT"/></disambig>
     </rule>
 
+    <rule name="-jähriges UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_1">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)iges</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:AKK:SIN:NEU:GRU:IND"/></disambig>
+    </rule>
+
+    <rule name="-jähriges UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_2">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)iges</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:NOM:SIN:NEU:GRU:IND "/></disambig>
+    </rule>
+
+    <rule name="-jähriges UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_3">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)iges</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:NOM:SIN:NEU:GRU:SOL "/></disambig>
+    </rule>
+
+    <rule name="-jähriges UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_4">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)iges</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:AKK:SIN:NEU:GRU:SOL "/></disambig>
+    </rule>
+
+    <rule name="-jährige UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_5">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)ige</token>
+        </pattern>
+        <disambig action="add"><wd pos=""/></disambig>
+    </rule>
+    <rule name="-jährige UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_6">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)ige</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:AKK:PLU:FEM:GRU:SOL"/></disambig>
+    </rule>
+    <rule name="-jährige UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_7">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)ige</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:AKK:PLU:FEM:GRU:SOL"/></disambig>
+    </rule>
+    <rule name="-jährige UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_8">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)ige</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:AKK:PLU:MAS:GRU:SOL"/></disambig>
+    </rule>
+    <rule name="-jährige UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_9">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)ige</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:AKK:PLU:NEU:GRU:SOL"/></disambig>
+    </rule>
+    <rule name="-jährige UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_10">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)ige</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:AKK:SIN:FEM:GRU:DEF"/></disambig>
+    </rule>
+    <rule name="-jährige UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_11">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)ige</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:AKK:SIN:FEM:GRU:IND"/></disambig>
+    </rule>
+    <rule name="-jährige UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_12">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)ige</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:AKK:SIN:FEM:GRU:SOL"/></disambig>
+    </rule>
+    <rule name="-jährige UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_13">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)ige</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:AKK:SIN:NEU:GRU:DEF"/></disambig>
+    </rule>
+    <rule name="-jährige UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_14">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)ige</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:NOM:PLU:FEM:GRU:SOL"/></disambig>
+    </rule>
+    <rule name="-jährige UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_15">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)ige</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:NOM:PLU:MAS:GRU:SOL"/></disambig>
+    </rule>
+    <rule name="-jährige UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_16">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)ige</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:NOM:PLU:NEU:GRU:SOL"/></disambig>
+    </rule>
+    <rule name="-jährige UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_17">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)ige</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:NOM:SIN:FEM:GRU:DEF"/></disambig>
+    </rule>
+    <rule name="-jährige UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_18">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)ige</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:NOM:SIN:FEM:GRU:IND"/></disambig>
+    </rule>
+    <rule name="-jährige UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_19">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)ige</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:NOM:SIN:FEM:GRU:SOL"/></disambig>
+    </rule>
+    <rule name="-jährige UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_20">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)ige</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:NOM:SIN:MAS:GRU:DEF"/></disambig>
+    </rule>
+    <rule name="-jährige UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_21">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)ige</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:NOM:SIN:NEU:GRU:DEF"/></disambig>
+    </rule>
+    <rule name="-jähriger UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_22">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)iger</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:DAT:SIN:FEM:GRU:SOL"/></disambig>
+    </rule>
+    <rule name="-jähriger UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_23">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)iger</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:GEN:PLU:FEM:GRU:SOL"/></disambig>
+    </rule>
+    <rule name="-jähriger UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_24">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)iger</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:GEN:PLU:MAS:GRU:SOL"/></disambig>
+    </rule>
+    <rule name="-jähriger UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_25">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)iger</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:GEN:PLU:NEU:GRU:SOL"/></disambig>
+    </rule>
+    <rule name="-jähriger UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_26">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)iger</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:GEN:SIN:FEM:GRU:SOL"/></disambig>
+    </rule>
+    <rule name="-jähriger UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_27">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)iger</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:NOM:SIN:MAS:GRU:IND"/></disambig>
+    </rule>
+    <rule name="-jähriger UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_28">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)iger</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:NOM:SIN:MAS:GRU:SOL"/></disambig>
+    </rule>
+    <rule name="-jähriger UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_29">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)iger</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:NOM:SIN:MAS:GRU:SOL "/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_30">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:AKK:PLU:FEM:GRU:DEF"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_31">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:AKK:PLU:FEM:GRU:IND"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_32">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:AKK:PLU:MAS:GRU:DEF"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_33">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:AKK:PLU:MAS:GRU:IND"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_34">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:AKK:PLU:NEU:GRU:DEF"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_35">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:AKK:PLU:NEU:GRU:IND"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_36">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:AKK:SIN:MAS:GRU:DEF"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_37">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:AKK:SIN:MAS:GRU:IND"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_38">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:AKK:SIN:MAS:GRU:SOL"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_39">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:DAT:PLU:FEM:GRU:DEF"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_40">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:DAT:PLU:FEM:GRU:IND"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_41">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:DAT:PLU:FEM:GRU:SOL"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_42">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:DAT:PLU:MAS:GRU:DEF"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_43">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:DAT:PLU:MAS:GRU:IND"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_44">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:DAT:PLU:MAS:GRU:SOL"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_45">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:DAT:PLU:NEU:GRU:DEF"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_46">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:DAT:PLU:NEU:GRU:IND"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_47">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:DAT:PLU:NEU:GRU:SOL"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_48">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:DAT:SIN:FEM:GRU:DEF"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_49">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:DAT:SIN:FEM:GRU:IND"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_50">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:DAT:SIN:MAS:GRU:DEF"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_51">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:DAT:SIN:MAS:GRU:IND"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_52">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:DAT:SIN:NEU:GRU:DEF"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_53">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:DAT:SIN:NEU:GRU:IND"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_54">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:GEN:PLU:FEM:GRU:DEF"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_55">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:GEN:PLU:FEM:GRU:IND"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_56">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:GEN:PLU:MAS:GRU:DEF"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_57">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:GEN:PLU:MAS:GRU:IND"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_58">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:GEN:PLU:NEU:GRU:DEF"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_59">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:GEN:PLU:NEU:GRU:IND"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_60">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:GEN:SIN:FEM:GRU:DEF"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_61">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:GEN:SIN:FEM:GRU:IND"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_62">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:GEN:SIN:MAS:GRU:DEF"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_63">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:GEN:SIN:MAS:GRU:IND"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_64">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:GEN:SIN:MAS:GRU:SOL"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_65">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:GEN:SIN:NEU:GRU:DEF"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_66">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:GEN:SIN:NEU:GRU:IND"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_67">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:GEN:SIN:NEU:GRU:SOL"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_68">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:NOM:PLU:FEM:GRU:DEF"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_69">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:NOM:PLU:FEM:GRU:IND"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_70">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:NOM:PLU:MAS:GRU:DEF"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_71">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:NOM:PLU:MAS:GRU:IND"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_72">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:NOM:PLU:NEU:GRU:DEF"/></disambig>
+    </rule>
+    <rule name="-jährigen UNKNOWN -> ADJ" id="NUMBER_COMPOUND_ADJECTIVE_73">
+        <pattern>
+            <token regexp="yes">(?-i)\d+-(jähr|bänd|seit|monat)igen</token>
+        </pattern>
+        <disambig action="add"><wd pos="ADJ:NOM:PLU:NEU:GRU:IND"/></disambig>
+    </rule>
+
     <!-- ============================================================================================================== -->
     <!-- IGNORE SPELLING -->
 
@@ -285,12 +728,62 @@ Copyright © 2013 Markus Brenneis, Daniel Naber, Jan Schreiber
         <disambig action="ignore_spelling"/>
     </rule>
 
-    <rule name="Côte d'Azur" id="COTE_DAZUR">
+    <rule name="pièce de résistance" id="RESISTANCE">
+        <pattern>
+            <token>pièce</token>
+            <token>de</token>
+            <token>résistance</token>
+        </pattern>
+        <disambig action="ignore_spelling"/>
+    </rule>
+
+    <rule name="Arc de Triomphe" id="ARC_DE_TRIOMPHE">
         <pattern case_sensitive="yes">
-            <token>Côte</token>
-            <token>d</token>
-            <token regexp="yes">['’]</token>
-            <token>Azur</token>
+            <token>Arc</token>
+            <token>de</token>
+            <token>Triomphe</token>
+        </pattern>
+        <disambig action="ignore_spelling"/>
+    </rule>
+
+    <rule name="nom de guerre" id="NOM_DE_GUERRE">
+        <pattern>
+            <token regexp="yes">noms?</token>
+            <token>de</token>
+            <token regexp="yes">guerre|plume</token>
+        </pattern>
+        <disambig action="ignore_spelling"/>
+    </rule>
+
+    <rule name="Coq au Vin" id="COQ_AU_VIN">
+        <pattern>
+            <token>Coq</token>
+            <token>au</token>
+            <token>Vin</token>
+        </pattern>
+        <disambig action="ignore_spelling"/>
+    </rule>
+
+    <rule name="Cordon bleu" id="CORDON_BLEU">
+        <pattern>
+            <token>Cordon</token>
+            <token>bleu</token>
+        </pattern>
+        <disambig action="ignore_spelling"/>
+    </rule>
+
+    <rule name="Jour fixe" id="JOUR_FIXE">
+        <pattern>
+            <token regexp="yes">Blanc|Jour|Idée</token>
+            <token>fixe</token>
+        </pattern>
+        <disambig action="ignore_spelling"/>
+    </rule>
+
+    <rule name="Nouvelle Cuisine/Vague" id="NOUVELLE_VAGUE">
+        <pattern>
+            <token>Nouvelle</token>
+            <token regexp="yes">Cuisine|Vague</token>
         </pattern>
         <disambig action="ignore_spelling"/>
     </rule>
@@ -470,7 +963,7 @@ Copyright © 2013 Markus Brenneis, Daniel Naber, Jan Schreiber
     <rule name="Le Havre/Le Mans" id="LE_HAVRE">
         <pattern>
             <token>Le</token>
-            <token regexp='yes'>Havre|Mans</token>
+            <token regexp='yes'>Havre|Mans|Monde|Pens?</token>
         </pattern>
         <disambig action="ignore_spelling"/>
     </rule>
@@ -536,6 +1029,14 @@ Copyright © 2013 Markus Brenneis, Daniel Naber, Jan Schreiber
         <pattern>
             <token>Big</token>
             <token regexp="yes">Ben|Data|Bang</token>
+        </pattern>
+        <disambig action="ignore_spelling"/>
+    </rule>
+
+    <rule name="sapere aude" id="SAPERE_AUDE">
+        <pattern>
+            <token>sapere</token>
+            <token>aude</token>
         </pattern>
         <disambig action="ignore_spelling"/>
     </rule>
@@ -1329,6 +1830,14 @@ Copyright © 2013 Markus Brenneis, Daniel Naber, Jan Schreiber
         <disambig action="ignore_spelling"/>
     </rule>
 
+    <rule name="Bloody Mary" id="BLOODY_MARY">
+        <pattern case_sensitive="yes">
+            <token>Bloody</token>
+            <token>Mary</token>
+        </pattern>
+        <disambig action="ignore_spelling"/>
+    </rule>
+
     <rule name="American Ginger Ale" id="AMERICAN_GINGER_ALE">
     <!-- Produktname von Schweppes, sonst ist lt. Duden Ginger-Ale richtig -->
         <pattern case_sensitive="yes">
@@ -1456,14 +1965,6 @@ Copyright © 2013 Markus Brenneis, Daniel Naber, Jan Schreiber
         <disambig action="ignore_spelling"/>
     </rule>
 
-    <rule name="Le Pen" id="LE_PEN">
-        <pattern>
-            <token>Le</token>
-            <token regexp='yes'>Pens?</token>
-        </pattern>
-        <disambig action="ignore_spelling"/>
-    </rule>
-
     <rule name="Fethullah Gülen" id="GUELEN">
         <pattern case_sensitive="yes">
             <token>Fethullah</token>
@@ -1546,52 +2047,20 @@ Copyright © 2013 Markus Brenneis, Daniel Naber, Jan Schreiber
         <disambig action="ignore_spelling"/>
     </rule>
 
-    <rule name="pièce de résistance" id="RESISTANCE">
-        <pattern>
-            <token>pièce</token>
-            <token>de</token>
-            <token>résistance</token>
-        </pattern>
-        <disambig action="ignore_spelling"/>
-    </rule>
-
-    <rule name="Coq au Vin" id="COQ_AU_VIN">
-        <pattern>
-            <token>Coq</token>
-            <token>au</token>
-            <token>Vin</token>
-        </pattern>
-        <disambig action="ignore_spelling"/>
-    </rule>
-
-    <rule name="Cordon bleu" id="CORDON_BLEU">
-        <pattern>
-            <token>Cordon</token>
-            <token>bleu</token>
-        </pattern>
-        <disambig action="ignore_spelling"/>
-    </rule>
-
-    <rule name="Jour fixe" id="JOUR_FIXE">
-        <pattern>
-            <token regexp="yes">Blanc|Jour|Idée</token>
-            <token>fixe</token>
-        </pattern>
-        <disambig action="ignore_spelling"/>
-    </rule>
-
-    <rule name="Nouvelle Cuisine/Vague" id="NOUVELLE_VAGUE">
-        <pattern>
-            <token>Nouvelle</token>
-            <token regexp="yes">Cuisine|Vague</token>
-        </pattern>
-        <disambig action="ignore_spelling"/>
-    </rule>
-
     <rule name="de Beauvoir" id="BEAUVOIR">
         <pattern case_sensitive="yes">
             <token>de</token>
             <token regexp="yes">Beauvoirs?</token>
+        </pattern>
+        <disambig action="ignore_spelling"/>
+    </rule>
+
+    <rule name="Côte d'Azur" id="COTE_DAZUR">
+        <pattern case_sensitive="yes">
+            <token>Côte</token>
+            <token>d</token>
+            <token regexp="yes">['’]</token>
+            <token>Azur</token>
         </pattern>
         <disambig action="ignore_spelling"/>
     </rule>
@@ -1608,6 +2077,14 @@ Copyright © 2013 Markus Brenneis, Daniel Naber, Jan Schreiber
         <pattern>
             <token>Pearl</token>
             <token>Harbor</token>
+        </pattern>
+        <disambig action="ignore_spelling"/>
+    </rule>
+
+    <rule name="Mark Twain" id="MARK_TWAIN">
+        <pattern>
+            <token>Mark</token>
+            <token regexp="yes">Twains?</token>
         </pattern>
         <disambig action="ignore_spelling"/>
     </rule>
@@ -1761,23 +2238,6 @@ Copyright © 2013 Markus Brenneis, Daniel Naber, Jan Schreiber
         <disambig action="ignore_spelling"/>
     </rule>
 
-    <rule name="nolens" id="NOLENS">
-        <pattern case_sensitive="yes">
-            <token>nolens</token>
-            <token>volens</token>
-        </pattern>
-        <disambig action="ignore_spelling"/>
-    </rule>
-
-    <rule name="WWW" id="WWW">
-        <pattern case_sensitive="yes">
-            <token>World</token>
-            <token>Wide</token>
-            <token regexp="yes">Webs?</token>
-        </pattern>
-        <disambig action="ignore_spelling"/>
-    </rule>
-
     <rule name="Mexico" id="MEXICO">
         <pattern case_sensitive="yes">
             <token>New</token>
@@ -1817,5 +2277,13 @@ Copyright © 2013 Markus Brenneis, Daniel Naber, Jan Schreiber
             <token>Man</token>
         </pattern>
         <disambig action="ignore_spelling"/>
+    </rule>
+
+    <rule name="Moulin Rouge" id="MOULIN_ROUGE">
+      <pattern case_sensitive="yes">
+        <token>Moulin</token>
+        <token>Rouge</token>
+      </pattern>
+      <disambig action="ignore_spelling"/>
     </rule>
 </rules>

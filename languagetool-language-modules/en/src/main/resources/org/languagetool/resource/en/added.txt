@@ -2,6 +2,9 @@
 # This does not add words to the spell checker, see hunspell/spelling.txt for that.
 # File Encoding: UTF-8
 # Format: three tab-separated fields: fullform baseform postags
+boomset	boomset	NN
+boomsets	boomset	NNS
+Coon	Coon	NNP
 download	download	NN
 downloads	download	NNS
 miserly	miserly	JJ
@@ -10,4 +13,6 @@ sealant	sealant	NN:UN
 servicing	servicing	NN:U
 species	species	NNS
 think	think	NN
+unencrypted	unencrypted	JJ
+unimolecular	unimolecular	JJ
 upset	upset	JJ

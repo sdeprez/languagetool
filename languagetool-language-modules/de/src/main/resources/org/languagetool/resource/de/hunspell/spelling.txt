@@ -8840,6 +8840,7 @@ Inverkehrbringens
 Islamistenszene
 Isolationszelle/N
 kindheitlich/A
+kcal
 Klickfalle/N
 Klientendaten
 Knuddeltiger/NS
@@ -8902,6 +8903,7 @@ sachgrundlos/A
 Scheibtruhe/N
 Schriftentausch/S
 Schriftentausches
+Selleriestaude/N
 Sojus-Kapsel
 Staffelspiel/S
 Staffelspiele/N
@@ -8942,6 +8944,9 @@ weiterschlug
 weiterschlugen
 weiterzuschlagen
 Wienerlied/S
+Wodka
+Worcestershiresauce
+World Wide Web/S
 ZAK
 Zufahrtsstreifen/S
 Zufriedenheitsskala
