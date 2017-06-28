@@ -1,1 +1,13 @@
 # words to be ignored by the spellchecker (auto-generated)
+# Words added manually and specific to the Web.
+docx
+doc
+xlsx
+xls
+pdf
+gif
+jpeg
+jpg
+svg
+css
+html
