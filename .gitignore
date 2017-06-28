@@ -16,3 +16,9 @@ derby.log
 .surefire-*
 pom.xml.versionsBackup
 pom.xml.asc
+
+
+local_settings.py
+__pycache__
+python/*.txt
+python/*.sql
