@@ -17,6 +17,7 @@ deploy () {
   build
 
   cp Dockerfile $TARGET_DIR
+  cp config.properties $TARGET_DIR
   cd $TARGET_DIR
 
   $(aws --region eu-central-1 ecr get-login)
