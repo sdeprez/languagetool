@@ -8304,19 +8304,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
         <example correction="">Je lui en <marker>veut</marker>.</example>
         <example>Je lui en veux.</example>
       </rule>
-      <rule name="je + 3 tokens + verbe">
-        <pattern>
-          <token>je</token>
-          <!-- Not all combinations of 3 tokens between je and verb are actually possible -->
-          <token regexp="yes">[mnt]e?</token>
-          <token regexp="yes">[’´'‛′‘]|[lmt]e?|[vn]ous|lui|leur</token>
-          <token regexp="yes">[’´'‛′‘]|l[ea]|[vn]ous|lui|leur|en|y</token>
-          <marker><token postag="V .*" postag_regexp="yes"><exception postag="V .* 1 s" postag_regexp="yes"/></token></marker>
-        </pattern>
-        <message>Le mot singulier « \8 » n’est pas accordé en nombre avec le mot pluriel « \2 ».</message>
-        <example correction="">Nous avions l’air <marker>fatigué</marker>.</example>
-        <example>Nous avions l’air <marker>fatigués</marker>.</example>
-      </rule>
       <rule name="je + 4 tokens + verbe">
         <pattern>
           <token>je</token>
