@@ -70,6 +70,19 @@ public class SubjectVerbAgreementRule extends Rule {
     Arrays.asList(
       new PatternTokenBuilder().tokenRegex("ist|war").build(),
       new PatternTokenBuilder().token("gemeinsam").build()
+    ),
+    Arrays.asList(
+      new PatternTokenBuilder().pos("SENT_START").build(),
+      new PatternTokenBuilder().pos("ZAL").build(),
+      new PatternTokenBuilder().tokenRegex("Tage|Monate|Jahre").build(),
+      new PatternTokenBuilder().posRegex("VER:3:SIN:.*").build()
+    ),
+    Arrays.asList(
+      new PatternTokenBuilder().pos("SENT_START").build(),
+      new PatternTokenBuilder().posRegex("ADV:MOD|ADJ:PRD:GRU").build(),
+      new PatternTokenBuilder().pos("ZAL").build(),
+      new PatternTokenBuilder().tokenRegex("Tage|Monate|Jahre").build(),
+      new PatternTokenBuilder().posRegex("VER:3:SIN:.*").build()
     )
   );
 
@@ -175,6 +188,7 @@ public class SubjectVerbAgreementRule extends Rule {
                       && prevChunkIsNominative(tokens, i-1)
                       && !hasUnknownTokenToTheLeft(tokens, i)
                       && !hasUnknownTokenToTheRight(tokens, i+1)
+                      && !tokens[1].getToken().matches("Alle|Viele") // "Viele Brunnen in Italiens Hauptstadt sind bereits abgeschaltet."
                       && !isFollowedByNominativePlural(tokens, i+1);  // z.B. "Die Zielgruppe sind Männer." - beides Nominativ, aber 'Männer' ist das Subjekt
       if (match) {
         String message = "Bitte prüfen, ob hier <suggestion>" + getSingularFor(tokenStr) + "</suggestion> stehen sollte.";

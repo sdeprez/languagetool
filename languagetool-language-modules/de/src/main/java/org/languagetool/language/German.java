@@ -225,7 +225,7 @@ public class German extends Language implements AutoCloseable {
   /** @since 3.1 */
   @Override
   public List<Rule> getRelevantLanguageModelRules(ResourceBundle messages, LanguageModel languageModel) throws IOException {
-    return Arrays.<Rule>asList(
+    return Arrays.asList(
             new GermanConfusionProbabilityRule(messages, languageModel, this)
     );
   }
@@ -251,6 +251,7 @@ public class German extends Language implements AutoCloseable {
     switch (id) {
       case "KOMMA_ZWISCHEN_HAUPT_UND_NEBENSATZ": return -10;
       case "OLD_SPELLING_INTERNAL": return 10;
+      case "CONFUSION_RULE": return -1;  // probably less specific than the rules from grammar.xml
     }
     return 0;
   }

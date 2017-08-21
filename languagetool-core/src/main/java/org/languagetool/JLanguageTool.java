@@ -64,7 +64,7 @@ import java.util.regex.Pattern;
 public class JLanguageTool {
 
   /** LanguageTool version as a string like {@code 2.3} or {@code 2.4-SNAPSHOT}. */
-  public static final String VERSION = "3.8-SNAPSHOT";
+  public static final String VERSION = "3.9-SNAPSHOT";
   /** LanguageTool build date and time like {@code 2013-10-17 16:10} or {@code null} if not run from JAR. */
   @Nullable public static final String BUILD_DATE = getBuildDate();
 
@@ -500,6 +500,14 @@ public class JLanguageTool {
    */
   public List<RuleMatch> check(AnnotatedText text) throws IOException {
     return check(text, true, ParagraphHandling.NORMAL);
+  }
+  
+  /**
+   * @since 3.9
+   */
+  @Experimental
+  public List<RuleMatch> check(AnnotatedText text, RuleMatchListener listener) throws IOException {
+    return check(text, true, ParagraphHandling.NORMAL, listener);
   }
   
   /**
@@ -967,7 +975,7 @@ public class JLanguageTool {
       List<RuleMatch> ruleMatches = new ArrayList<>();
       for (Rule rule : rules) {
         if (rule instanceof TextLevelRule && !ignoreRule(rule) && paraMode != ParagraphHandling.ONLYNONPARA) {
-          RuleMatch[] matches = ((TextLevelRule) rule).match(analyzedSentences);
+          RuleMatch[] matches = ((TextLevelRule) rule).match(analyzedSentences, annotatedText);
           List<RuleMatch> adaptedMatches = new ArrayList<>();
           for (RuleMatch match : matches) {
             LineColumnRange range = getLineColumnRange(match);

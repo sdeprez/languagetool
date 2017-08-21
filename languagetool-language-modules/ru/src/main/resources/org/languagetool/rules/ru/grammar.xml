@@ -2851,6 +2851,56 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
                 <example correction="час пик"><marker>час-пик</marker></example>
             </rule>
         </rulegroup>
+        <rulegroup default="on" id="IS_POD" name="Сложный предлог «из-под»">
+            <rule> <!-- Предлог из-под всегда употребляется с родительным падежом -->
+                <pattern case_sensitive="yes">
+                  <marker>
+                    <token>из</token>
+                    <token>под</token>
+                  </marker>
+                    <token  postag_regexp="yes" postag="NN:.*:.*:.*:R|ADJ:.*:.*:R"></token>       
+                </pattern>
+                <message>Предлог пишется через дефис: <suggestion>\1-\2</suggestion>.</message>
+                <url>http://kak-pishetsa.ru/kak-pravilno-pishetsya-iz-pod/</url>
+                <short>Дефис.</short>
+                <example>Кот вылез из-под стола.</example>
+                <example correction="из-под">Кот вылез <marker>из под</marker> стола.</example>
+            </rule>
+        </rulegroup>
+        <rulegroup default="on" id="PO_NAD" name="Сложный предлог «по-над»">
+            <rule> <!-- TODO  добавить исключение в правило "два предлога подряд" -->
+                <pattern case_sensitive="yes">
+                  <marker>
+                    <token>по</token>
+                    <token>над</token>
+                  </marker>
+                    <token  postag_regexp="yes" postag="NN:.*:.*:.*:T|ADJ:.*:.*:T"></token>       
+                </pattern>
+                <message>Предлог пишется через дефис: <suggestion>\1-\2</suggestion>.</message>
+
+                <short>Дефис.</short>
+                <example>Кот крался по-над стенкой.</example>
+                <example correction="по-над">Кот крался <marker>по над</marker> стенкой.</example>
+            </rule>
+        </rulegroup>
+        <rulegroup default="on" id="Po-bystromu" name="Наречие «по-быстрому»?">
+            <rule> <!-- " -->
+                <pattern case_sensitive="yes">
+                  <marker>
+                    <token>по</token>
+                    <token regexp="yes">быстрому|новому</token>
+                  </marker>
+          <!--    <token><exception  postag_regexp="yes" postag="NN:.*:.*:.*:D|ADJ:.*:.*:D"></exception></token>     -->
+                    <token>.</token>                
+                </pattern>
+                <message>Наречие пишется через дефис: <suggestion>\1-\2</suggestion>.</message>
+             
+                <short>Дефис.</short>
+                <example>Мы справились по-быстрому.</example>
+                <example>Мы пошли по быстрому маршруту.</example>
+                <example correction="по-быстрому">Мы справились <marker>по быстрому</marker>.</example>
+            </rule>
+        </rulegroup>
         <rulegroup default="on" id="VVODNOE_SLOVO" name="Вводные слова: «по-видимому», ...">
             <rule>
                 <pattern case_sensitive="yes">
@@ -10507,7 +10557,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
                         <token>ни</token>
                         <token postag="VB:INF:" />
                 </pattern>
-                <message>Двойное отрицание с частицей «не»:<suggestion>не \2 не \4</suggestion></message>
+                <message>Двойное отрицание с частицей «не»:<suggestion>не \2 не \3</suggestion></message>
                 <short>Правильно два «НЕ»</short>
                 <example correction="не ни не согласиться">С этим <marker>нельзя ни согласиться</marker>.</example>
                 <example>С этим нельзя не согласиться.</example>

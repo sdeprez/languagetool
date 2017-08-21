@@ -54,7 +54,9 @@ printf "Sublime Requests  : %'d\n" $SUBLIME >>$OUTFILE
 MSWORD=`grep -c ":msword" $TMPFILE`
 printf "MS-Word Requests  : %'d\n" $MSWORD >>$OUTFILE
 
-echo "$DATE2;$TOTAL;$FF;$CHROME;$ANDROID;$CLIENT;$SUBLIME;$WEBEXT;$MSWORD" >>/home/languagetool/api/api-log.csv
+# when adding items, add only at the end so scripts don't get confused:
+echo "$DATE2;$TOTAL;$FF;$CHROME;$ANDROID;$CLIENT;$SUBLIME;$WEBEXT;$MSWORD;$WEBEXTFF;$WEBEXTCHROME;$TOTALHOME;$GOOGLEAPP" >>/home/languagetool/api/api-log.csv
+cp /home/languagetool/api/api-log.csv /home/languagetool/languagetool.org/languagetool-website/www/analytics
 
 echo "" >>$OUTFILE
 echo "OutOfMemoryError           : `grep -c 'OutOfMemoryError' $TMPFILE`" >>$OUTFILE
@@ -108,10 +110,16 @@ YEAR=`date +"%Y"`
 # note: requires a root cronjob to copy the error.log file to ~/api/apache_error.log:
 echo "" >>$OUTFILE
 echo "Apache errors (max. 30):" >>$OUTFILE
-grep "$DATE_APACHE" /home/languagetool/api/apache_error.log | grep $YEAR | tail -n 30 >>$OUTFILE
+grep "$DATE_APACHE" /home/languagetool/api/apache_error.log | grep -v "log.php" | grep $YEAR | tail -n 30 >>$OUTFILE
 
 echo "" >>$OUTFILE
 echo "Apache not found errors (filtered, max. 10):" >>$OUTFILE
 grep "$DATE_APACHE" /home/languagetool/api/apache_not_found.log | grep $YEAR | tail -n 10 >>$OUTFILE
+
+echo "" >>$OUTFILE
+echo -n "Number of client-side errors: " >>$OUTFILE
+grep "$DATE_APACHE" /home/languagetool/api/apache_error.log | grep -c $YEAR >>$OUTFILE
+echo "Client-side errors (max. 20):" >>$OUTFILE
+grep "$DATE_APACHE" /home/languagetool/api/apache_error.log | grep $YEAR | tail -n 20 >>$OUTFILE
 
 cat $OUTFILE | mail -a 'Content-Type: text/plain; charset=utf-8' -s "LanguageTool API Report" daniel.naber@languagetool.org

@@ -88,7 +88,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
         <example>vivre l’un près de l’autre.</example>
       </rule>
     </rulegroup>
-    <rulegroup id="COTE" name="coté, côté, cote">
+    <rulegroup id="COTE" name="coté, côté, cote, cotte">
       <rule>
         <pattern>
           <token regexp="yes">à|au|autre|bon|mauvais|[cdl]e|du|[mts]on|[nv]otre|chaque|un|leur</token>
@@ -107,16 +107,17 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
       </rule>
       <rule>
         <pattern>
-          <marker><token regexp="yes">cotes?</token></marker>
+          <marker><token regexp="yes">cott?es?</token></marker>
           <token>de</token>
           <token regexp="yes">porcs?|bœuf|boeuf|veaux?|Bretagne</token>
         </pattern>
-        <message>Voulez-vous écrire <suggestion>côte</suggestion> ?</message>
+        <message>Voulez-vous écrire <suggestion><match no="1" regexp_match="ott?" regexp_replace="ôt"/></suggestion> ?</message>
         <example correction="côte">Une <marker>cote</marker> de veau.</example>
+        <example correction="côtes">Des <marker>cottes</marker> de bœuf.</example>
       </rule>
       <rule>
         <pattern>
-          <marker><token>cote</token></marker>
+          <marker><token regexp="yes">cott?e</token></marker>
           <token>d</token>
           <token regexp="yes">['´‘’′]</token>
           <token regexp="yes">Albâtre|Azur|Ivoire|Or|Opale|Émeraude</token>
@@ -128,28 +129,31 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
         <pattern>
           <token regexp="yes">fractures?|radiographies?</token>
           <token regexp="yes">des?</token>
-          <marker><token>cotes</token></marker>
+          <marker><token regexp="yes">cott?es</token></marker>
         </pattern>
-        <message>Voulez-vous écrire <suggestion><match no="3" regexp_match="o" regexp_replace="ô"/></suggestion> ?</message>
+        <message>Voulez-vous écrire <suggestion><match no="3" regexp_match="ott?" regexp_replace="ôt"/></suggestion> ?</message>
         <example correction="côtes">Une fracture des <marker>cotes</marker>.</example>
+        <example correction="côtes">Une fracture des <marker>cottes</marker>.</example>
       </rule>
       <rule>
         <pattern>
-          <marker><token regexp="yes">cotes?</token></marker>
+          <marker><token regexp="yes">cott?es?</token></marker>
           <token regexp="yes">(brisée|cassée|fêlée|fracturée|surnuméraire|rocheuse|adriatique|américaine|californienne|atlantiques?|basque|bretonne|landaise|normande|vendéenne|française|belge|espagnole|italienne|portugaise|africaine|méditerranéenne|pacifique|raide|occidentale|fractale)s?|nord|sud|ouest</token>
         </pattern>
-        <message>Voulez-vous écrire <suggestion><match no="1" regexp_match="o" regexp_replace="ô"/></suggestion> ?</message>
-        <example correction="côtes">Une <marker>cotes</marker> fracturée.</example>
+        <message>Voulez-vous écrire <suggestion><match no="1" regexp_match="ott?" regexp_replace="ôt"/></suggestion> ?</message>
+        <example correction="côte">Une <marker>cote</marker> fracturée.</example>
+        <example correction="côtes">Les <marker>cottes</marker> fracturées.</example>
       </rule>
       <rule>
         <pattern>
           <token inflected="yes">avoir</token>
           <token min="0" max="1" regexp="yes">encore|toujours</token>
           <token>la</token>
-          <marker><token>côte</token></marker>
+          <marker><token regexp="yes">côte|cotte</token></marker>
         </pattern>
         <message>Confusion probable entre <suggestion>cote</suggestion> et « côte ».</message>
         <example correction="cote">Il a la <marker>côte</marker> auprès des filles.</example>
+        <example correction="cote">Il a la <marker>cotte</marker> auprès des filles.</example>
         <example correction="cote">Il a encore la <marker>côte</marker> auprès des filles.</example>
       </rule>
       <rule>
@@ -159,10 +163,20 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
           <token inflected="yes">avoir</token>
           <token regexp="yes">pas|plus</token>
           <token>la</token>
-          <marker><token>côte</token></marker>
+          <marker><token regexp="yes">côte|cotte</token></marker>
         </pattern>
-        <message>Confusion probable entre <suggestion>cote</suggestion> et « côte ».</message>
-        <example correction="cote">Il n’a plus la <marker>côte</marker>.</example>
+        <message>confusion probable entre <suggestion>cote</suggestion> et « côte ».</message>
+        <example correction="cote">il n’a plus la <marker>côte</marker>.</example>
+      </rule>
+      <rule>
+        <pattern>
+          <marker><token regexp="yes">c[ôo]tes?</token></marker>
+          <token>de</token>
+          <token>mailles</token>
+        </pattern>
+        <message>Confusion probable entre « \1 » et <suggestion><match no="1" regexp_match="[ôo]" regexp_replace="ot"/></suggestion>.</message>
+        <url>https://fr.wiktionary.org/wiki/cotte_de_mailles</url>
+        <example correction="cotte">Une <marker>cote</marker> de mailles.</example>
       </rule>
     </rulegroup>
     <rulegroup id="CA_SA" name="ÇA au lieu de SA">
@@ -1109,32 +1123,39 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
     <!-- mis en default="off" car cette règle génère des fausses alertes sur toutes les phrases avec un attribut du sujet, etc. -->
     <rule default="off" id="SONT_SON" name="SONT au lieu de SON">
       <pattern>
-        <marker>
-          <token>sont</token>
-        </marker>
+        <marker><token>sont</token></marker>
         <token postag="[NJ].*" postag_regexp="yes"/>
       </pattern>
       <message>Voulez-vous écrire <suggestion>son</suggestion> ?</message>
       <example correction="son">Le problème c’est qu’apparemment elle n’a pas <marker>sont</marker> mot de passe...</example>
       <example>Le problème c’est qu’apparemment elle n’a pas <marker>son</marker> mot de passe...</example>
     </rule>
-    <rule id="SON_SONT" name="SON au lieu de SONT">
-      <pattern>
-        <token negate="yes" regexp="yes">au|le|du|un|bande|même</token>
-        <marker>
-          <token>son<exception postag="N m s"/></token>
-        </marker>
-        <token postag="[VR].*|P" postag_regexp="yes"><exception postag="[NJ] .*" postag_regexp="yes"/></token>
-      </pattern>
-      <message>Voulez-vous écrire <suggestion>sont</suggestion> ?</message>
-      <example>Les Chinoises sont celles qui se marient le plus avec les Sud-Coréens.</example>
-      <example correction="sont">Les Chinoises <marker>son</marker> celles qui se marient le plus avec les Sud-Coréens.</example>
-      <example correction="sont">Ils <marker>son</marker> dans la même classe.</example>
-      <example>Le <marker>son</marker> dans l’informatique</example>
-      <example>Son indigne frère</example>
-      <example>Au son de la voix</example>
-      <example>Même son de cloche</example>
-    </rule>
+    <rulegroup id="SON_SONT" name="SON au lieu de SONT">
+      <rule>
+        <pattern>
+          <token regexp="yes">ne|ils</token>
+          <marker><token>son</token></marker>
+        </pattern>
+        <message>Voulez-vous écrire <suggestion>sont</suggestion> ?</message>
+        <example correction="sont">Ils ne <marker>son</marker> pas ici.</example>
+        <example correction="sont">Ils <marker>son</marker> ici.</example>
+      </rule>
+      <rule>
+        <pattern>
+          <token negate="yes" regexp="yes">au|le|du|un|bande|même</token>
+          <marker><token>son<exception postag="N m s"/></token></marker>
+          <token postag="[VR].*|P" postag_regexp="yes"><exception postag="[NJ] .*" postag_regexp="yes"/></token>
+        </pattern>
+        <message>Voulez-vous écrire <suggestion>sont</suggestion> ?</message>
+        <example>Les Chinoises sont celles qui se marient le plus avec les Sud-Coréens.</example>
+        <example correction="sont">Les Chinoises <marker>son</marker> celles qui se marient le plus avec les Sud-Coréens.</example>
+        <example correction="sont">Ils <marker>son</marker> dans la même classe.</example>
+        <example>Le <marker>son</marker> dans l’informatique</example>
+        <example>Son indigne frère</example>
+        <example>Au son de la voix</example>
+        <example>Même son de cloche</example>
+      </rule>
+    </rulegroup>
     <rulegroup id="ET_BIEN" name="ET BIEN au lieu de EH BIEN">
       <rule>
         <pattern>
@@ -2998,6 +3019,19 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
         <example correction="Warren Buffett"><marker>Waren Buffett</marker> est né en 1930.</example>
       </rule>
       <rule>
+        <antipattern>
+          <token>Noam</token>
+          <token>Chomsky</token>
+        </antipattern>
+        <pattern>
+          <token regexp="yes">Noh?am</token>
+          <token regexp="yes">Chomsk[iy]</token>
+        </pattern>
+        <message>Écrivez <suggestion>Noam Chomsky</suggestion> s’il s’agit du linguiste américain.</message>
+        <url>https://fr.wikipedia.org/wiki/Noam_Chomsky</url>
+        <example correction="Noam Chomsky"><marker>Noham Chomsky</marker> en 1928.</example>
+      </rule>
+      <rule>
         <pattern>
           <token regexp="yes">Joel|Ethan|frères?</token>
           <marker><token>Cohen</token></marker>
@@ -3296,6 +3330,20 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
         <url>https://fr.wikipedia.org/wiki/Fran%C3%A7ois_Hollande</url>
         <example correction="François Hollande"><marker>François Holland</marker></example>
         <example correction="François Hollande"><marker>Francois Hollande</marker></example>
+      </rule>
+      <rule>
+        <antipattern>
+          <token regexp="yes">Emmanuel|Brigitte</token>
+          <token>Macron</token>
+        </antipattern>
+        <pattern>
+          <token regexp="yes">[EÉ]mm?ann?uel(lle)?|Brigitt?e?</token>
+          <token regexp="yes">Ma(c|c?k)a?ron</token>
+        </pattern>
+        <message>Écrivez <suggestion>Emmanuel Macron</suggestion> s’il s’agit du président de la république.</message>
+        <url>https://fr.wikipedia.org/wiki/Emmanual_Macron</url>
+        <example correction="Emmanuel Macron"><marker>Emanuel Macron</marker></example>
+        <example correction="Emmanuel Macron"><marker>Emmanuel Makron</marker></example>
       </rule>
       <rule>
         <antipattern>
@@ -5090,7 +5138,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
         <pattern>
           <token regexp="yes">(Haute|Basse)[-‑‐]Cornouailles</token>
         </pattern>
-        <message>Confusion probable entre <suggestion>Cornouaille</suggestion> (ancienne division de la Bretagne) et « Cornouailles » (nation celtique au sud ouest de l’Angleterre).</message>
+        <message>Confusion probable entre <suggestion>Cornouaille</suggestion> (ancienne division de la Bretagne) et « Cornouailles » (nation celtique au sud-ouest de l’Angleterre).</message>
         <url>https://fr.wikipedia.org/wiki/Cornouaille</url>
         <example correction="Cornouaille">Les communes de la <marker>Haute-Cornouailles</marker>.</example>
         <example>Les communes de la Haute-Cornouaille.</example>
@@ -5100,7 +5148,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
           <token regexp="yes">Haute|Basse</token>
           <marker><token>Cornouailles</token></marker>
         </pattern>
-        <message>Confusion probable entre <suggestion>Cornouaille</suggestion> (ancienne division de la Bretagne) et « Cornouailles » (nation celtique au sud ouest de l’Angleterre).</message>
+        <message>Confusion probable entre <suggestion>Cornouaille</suggestion> (ancienne division de la Bretagne) et « Cornouailles » (nation celtique au sud-ouest de l’Angleterre).</message>
         <url>https://fr.wikipedia.org/wiki/Cornouaille</url>
         <example correction="Cornouaille">Les communes de la Haute <marker>Cornouailles</marker>.</example>
         <example>Les communes de la Haute Cornouaille.</example>
@@ -5111,7 +5159,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
           <token>de</token>
           <marker><token>Cornouailles</token></marker>
         </pattern>
-        <message>Confusion probable entre <suggestion>Cornouaille</suggestion> (ancienne division de la Bretagne) et « Cornouailles » (nation celtique au sud ouest de l’Angleterre).</message>
+        <message>Confusion probable entre <suggestion>Cornouaille</suggestion> (ancienne division de la Bretagne) et « Cornouailles » (nation celtique au sud-ouest de l’Angleterre).</message>
         <url>https://fr.wikipedia.org/wiki/Cornouaille</url>
         <example correction="Cornouaille">Le Festival de <marker>Cornouailles</marker> est un festival annuel se déroulant dans la ville de Quimper.</example>
         <example>Le Festival de Cornouaille est un festival annuel se déroulant dans la ville de Quimper.</example>
@@ -5121,7 +5169,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
           <marker><token>Cornouailles</token></marker>
           <token regexp="yes">bretonnes?|armoricaines?|françaises?</token>
         </pattern>
-        <message>Confusion probable entre <suggestion>Cornouaille</suggestion> (ancienne division de la Bretagne) et « Cornouailles » (nation celtique au sud ouest de l’Angleterre).</message>
+        <message>Confusion probable entre <suggestion>Cornouaille</suggestion> (ancienne division de la Bretagne) et « Cornouailles » (nation celtique au sud-ouest de l’Angleterre).</message>
         <url>https://fr.wikipedia.org/wiki/Cornouaille</url>
         <example correction="Cornouaille">Tourisme en <marker>Cornouailles</marker> bretonne.</example>
         <example>Tourisme en Cornouaille bretonne.</example>
@@ -5131,7 +5179,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
           <marker><token>Cornouaille</token></marker>
           <token regexp="yes">britannique|anglaise</token>
         </pattern>
-        <message>Confusion probable entre « Cornouaille » (ancienne division de la Bretagne) et <suggestion>Cornouailles</suggestion> (nation celtique au sud ouest de l’Angleterre).</message>
+        <message>Confusion probable entre « Cornouaille » (ancienne division de la Bretagne) et <suggestion>Cornouailles</suggestion> (nation celtique au sud-ouest de l’Angleterre).</message>
         <url>https://fr.wikipedia.org/wiki/Cornouaille</url>
         <example correction="Cornouailles">Tourisme en <marker>Cornouaille</marker> britannique.</example>
         <example>Tourisme en Cornouailles britannique.</example>
@@ -6030,7 +6078,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
           <token min="0" max="1">de</token>
           <marker><token regexp="yes">paires?</token></marker>
         </pattern>
-        <message>Confusion probably entre « \3 » et <suggestion>pair</suggestion>.</message>
+        <message>Confusion probable entre « \3 » et <suggestion>pair</suggestion>.</message>
         <example correction="pair">Une cuisinière hors <marker>paire</marker>.</example>
         <example correction="pair">Une cuisinière hors de <marker>paire</marker>.</example>
       </rule>
@@ -6040,7 +6088,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
           <token>de</token>
           <marker><token regexp="yes">paires?</token></marker>
         </pattern>
-        <message>Confusion probably entre « \2 » et <suggestion>pair</suggestion>.</message>
+        <message>Confusion probable entre « \2 » et <suggestion>pair</suggestion>.</message>
         <example correction="pair">Travail et talent vont de <marker>paire</marker>.</example>
       </rule>
       <rule>
@@ -6049,7 +6097,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
           <token>au</token>
           <marker><token>paire</token></marker>
         </pattern>
-        <message>Confusion probably entre « paire » et <suggestion>pair</suggestion>.</message>
+        <message>Confusion probable entre « paire » et <suggestion>pair</suggestion>.</message>
         <example correction="pair">Il travaille actuellement au <marker>paire</marker>.</example>
       </rule>
     </rulegroup>
@@ -6413,7 +6461,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
     <rulegroup id="PRUDES_HOMMES" name="prudes hommes → prud’hommes">
       <rule>
         <regexp>\bprude?s?[-‑‐ ](?:hommes?|homies?|homale?s?|homaux)\b</regexp>
-        <message>Voulez-vous écrire <suggestion><match no="1" regexp_match="^\w+\W(.*)" regexp_replace="prud’$1"/></suggestion> ou <suggestion>prud<match no="1" regexp_match="^\w+\W(.*)" regexp_replace="prud$1"/></suggestion> (orthographe rectifée de 1990) ?</message>
+        <message>Voulez-vous écrire <suggestion><match no="1" regexp_match="^\w+\W(.*)" regexp_replace="prud’$1"/></suggestion> ou <suggestion>prud<match no="1" regexp_match="^\w+\W(.*)" regexp_replace="prud$1"/></suggestion> (orthographe rectifiée de 1990) ?</message>
         <example correction="prud’hommes|prudhommes">Le tribunal des <marker>prudes hommes</marker>.</example>
         <example correction="prud’hommes|prudhommes">Le tribunal des <marker>prudes-hommes</marker>.</example>
       </rule>
@@ -6818,7 +6866,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
           <token regexp="yes">depuis|vers|56000</token>
           <marker><token case_sensitive="yes">Vanne</token></marker>
         </pattern>
-        <message>Confusion probable entre la ville de <suggestion>Vannes</suggestion> en Bretagne et le mote « vanne ».</message>
+        <message>Confusion probable entre la ville de <suggestion>Vannes</suggestion> en Bretagne et le mot « vanne ».</message>
         <example correction="Vannes">56000 <marker>Vanne</marker>.</example>
       </rule>
       <rule>
@@ -6839,7 +6887,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
           <marker><token case_sensitive="yes">Renne</token></marker>
         </pattern>
         <message>Confusion probable entre la ville de <suggestion>Rennes</suggestion> en Bretagne et le mammifère « renne ».</message>
-        <example correction="Rennes">J'habite à <marker>Renne</marker>.</example>
+        <example correction="Rennes">J’habite à <marker>Renne</marker>.</example>
       </rule>
       <rule>
         <pattern>
@@ -6859,7 +6907,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
           <token>de</token>
           <marker><token regexp="yes" inflected="yes">rêne|reine</token></marker>
         </pattern>
-        <message>Confusion problable entre « \3 » et <suggestion><match no="3" regexp_match=".*n" regexp_replace="renn"/></suggestion> (mammifère).</message>
+        <message>Confusion probable entre « \3 » et <suggestion><match no="3" regexp_match=".*n" regexp_replace="renn"/></suggestion> (mammifère).</message>
         <example correction="rennes">Un troupeau de <marker>rênes</marker>.</example>
       </rule>
       <rule>
@@ -6868,7 +6916,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
           <token>des</token>
           <marker><token regexp="yes">rênes|reines</token></marker>
         </pattern>
-        <message>Confusion problable entre « \3 » et <suggestion>rennes</suggestion> (mammifère).</message>
+        <message>Confusion probable entre « \3 » et <suggestion>rennes</suggestion> (mammifère).</message>
         <example correction="rennes">Ils chassent des <marker>rênes</marker>.</example>
       </rule>
     </rulegroup>
@@ -7646,7 +7694,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
         </marker>
         <token><exception postag="V inf|UNKNOWN" postag_regexp="yes"/></token>
       </pattern>
-      <message>Incohérence : « à \2 » ne peut se touver que devant un infinitif.</message>
+      <message>Incohérence : « à \2 » ne peut se trouver que devant un infinitif.</message>
       <example correction="">Il a gagné <marker>à le</marker> championnat.</example>
       <example>Je n’arrive pas à le déplacer.</example>
     </rule>
@@ -7658,7 +7706,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
           <exception regexp="yes">bien|fort|ou|même|mieux|moins|peu|plus|tout|très|zéro|(?-i)[A-Z].*|:</exception>
         </token>
       </pattern>
-      <message>Incohérence : « \1 » ne peut pas se touver devant « \2 ».</message>
+      <message>Incohérence : « \1 » ne peut pas se trouver devant « \2 ».</message>
       <example correction="">Je vais acheter <marker>du le</marker> jambon.</example>
       <example>Je vais acheter du jambon.</example>
       <example>Du bon jambon.</example>
@@ -8265,21 +8313,9 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
           <token regexp="yes">[’´'‛′‘]|l[ea]|[vn]ous|lui|leur|en|y</token>
           <marker><token postag="V .*" postag_regexp="yes"><exception postag="V .* 1 s" postag_regexp="yes"/></token></marker>
         </pattern>
-        <message>Vérifiez l’accord entre le pronom « \1 » et le verbe « \5 ».</message>
-        <example correction="">Je ne t’<marker>attend</marker> pas.</example>
-        <example>Je ne t’<marker>attends</marker> pas.</example>
-        <example correction="">Je n’y <marker>croit</marker> pas</example>
-        <example>Je n’y <marker>crois</marker> pas</example>
-        <example correction="">Je t’en <marker>parles</marker></example>
-        <example>Je t’en <marker>parle</marker></example>
-        <example correction="">Je ne vous en <marker>parles</marker> pas.</example>
-        <example>Je ne vous en <marker>parle</marker> pas.</example>
-        <example correction="">Je ne leur en <marker>veut</marker> pas.</example>
-        <example>Je ne leur en <marker>veux</marker> pas.</example>
-        <example correction="">Je ne le lui <marker>achètes</marker> pas.</example>
-        <example>Je ne le lui <marker>achète</marker> pas.</example>
-        <example correction="">Je te l’<marker>avait</marker> donné.</example>
-        <example>Je te l’<marker>avais</marker> donné.</example>
+        <message>Le mot singulier « \8 » n’est pas accordé en nombre avec le mot pluriel « \2 ».</message>
+        <example correction="">Nous avions l’air <marker>fatigué</marker>.</example>
+        <example>Nous avions l’air <marker>fatigués</marker>.</example>
       </rule>
       <rule name="je + 4 tokens + verbe">
         <pattern>
@@ -11405,10 +11441,12 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
     <rulegroup id="PAS_VU_PAS_PRIS" name="Pas vu pas pris (participe passé invariable)">
       <rule>
         <pattern>
-          <token>pas</token>
-          <token regexp="yes">vue?s?<exception>vu</exception></token>
-          <token>pas</token>
-          <token regexp="yes">prises?|pris</token>
+          <marker>
+            <token>auprès</token>
+            <token>de</token>
+          </marker>
+          <token skip="3">qui</token>
+          <token inflected="yes">adresser</token>
         </pattern>
         <message>Les participes « vu » et « pris » sont invariables dans l’expression <suggestion>pas vu pas pris</suggestion>.</message>
         <url>http://bdl.oqlf.gouv.qc.ca/bdl/gabarit_bdl.asp?id=574</url>

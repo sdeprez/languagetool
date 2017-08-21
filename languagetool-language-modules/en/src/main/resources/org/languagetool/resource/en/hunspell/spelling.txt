@@ -6,12 +6,15 @@ a posteriori
 a priori
 ab initio
 abaxial
+Abelian
 ad hoc
 ad infinitum
 ad nauseam
 adjoint
 aggregator
 aggregators
+airframe
+airframes
 alimentation
 amidst
 amine
@@ -46,18 +49,26 @@ bisectionally
 Blu-ray
 boomset
 boomsets
+borate
+borates
 borescope
 borescopes
 bosonic
 breadthwise
+Brexit
+bulleted
 callout
 callouts
+cancellable
 candela
 candelas
 cavitation
 cavitations
 CD-ROM
 CDs
+Cherkasy
+Chernihiv
+Chernivtsi
 chirality
 chock-full
 clinometer
@@ -68,6 +79,7 @@ collet
 collets
 collider
 colliders
+colorable
 combustor
 combustors
 compensator
@@ -76,6 +88,7 @@ complicatedness
 computable
 conditionality
 construal
+contra
 contravariant
 copywriting
 counterstroke
@@ -91,6 +104,10 @@ crowdsourcing
 cuprous
 decrement
 decrementing
+de-energize
+de-energized
+de-energizes
+de-energizing
 deficiently
 degrease
 degreased
@@ -110,9 +127,11 @@ dischargers
 discretionally
 discretization
 dizzyingly
+Dnipro
 doubler
 doublers
 Doxygen
+droopily
 Drupal
 durableness
 DVDs
@@ -155,10 +174,14 @@ findable
 fittingness
 formulae
 gappy
+glitchier
+glitchiest
+glitchy
 gluons
 glycol
 good-natured
 graphene
+grayscale
 guest-starred
 handgrip
 handgrips
@@ -172,6 +195,8 @@ hereunder
 Hermitian
 heteromerous
 higgledy-piggledy
+highflier
+highfliers
 hydrophilic
 hypergeometric
 iBook
@@ -188,41 +213,77 @@ influencers
 informatics
 ingoing
 inter alia
+interlay
+interlaid
+interlaying
+interlays
 involvedness
 iPhone
 ipso facto
 irrespectively
 isometry
+Ivano-Frankivsk
 Javadoc
 jQuery
 ketone
 ketones
+Kharkiv
+Khmelnytskyi
+Kremenchuk
+Kropyvnytskyi
+Kyiv
 Laplacian
 liftable
 limitlessly
 linctus
+Liouville
 livelily
+Luhansk
+lumen
+lumens
+luminaire
+luminaires
+Lutsk
 lux
 luxes
+Lviv
 macaron
 meddlesomeness
 mediagenic
 megohm
 megohms
 metameric
+methodize
+methodized
+methodizes
+methodizing
 microswitch
 microswitches
 millennialist
+minima
 minimum
 Minkowski
+misalign
+misaligning
+misaligns
+misrigged
+mitzvah
+mitzvahs
+mitzvot
+mitzvoth
 modalities
 modality
+modularized
 modus operandi
 modus vivendi
+Molière
+muchly
 multichannel
 multifunction
+multipart
 mutagenic
 mutatis mutandis
+naïve
 née
 nitric
 nitrosamine
@@ -230,6 +291,8 @@ nitrosamines
 nitty-gritty
 nota bene
 Oculus
+Odesa
+oilfree
 oilpaper
 oilpapers
 onboard
@@ -257,6 +320,10 @@ overtightens
 oxidative
 pacta sunt servanda
 pari passu
+passivate
+passivated
+passivates
+passivating
 penetrant
 penetrants
 pentane
@@ -275,6 +342,16 @@ playoff
 Poincaré
 potentiometer
 potentiometers
+potlife
+potlives
+ppb
+prearrival
+predefine
+predefines
+predefining
+preowned
+preventability
+preventively
 prima facie
 quadrennially
 quinquennial
@@ -310,11 +387,17 @@ reposition
 repositioned
 repositioning
 repositions
+repressurize
+repressurized
+repressurizes
+repressurizing
 reseller
 resellers
 resistivity
 reticle
 reticles
+retractive
+retractives
 retractor
 retractors
 retrim
@@ -331,9 +414,12 @@ ringfence
 ringfenced
 ringfences
 ringfencing
+Rivne
 robotically
 rôle
 rôles
+safetied
+safetying
 Schengen
 scintillator
 scintillators
@@ -342,6 +428,8 @@ screencasts
 screenful
 screenfuls
 screenshot
+screwjack
+screwjacks
 searchable
 Segway
 Segways
@@ -365,14 +453,22 @@ siting
 slantways
 spacetime
 spanwise
+speedbrake
+speedbrakes
 spick
 spicks
 spinless
 spinor
 spinors
 splined
+statin
+statins
 steradian
 steradians
+strategize
+strategized
+strategizes
+strategizing
 subassemblies
 subassembly
 subcritical
@@ -383,6 +479,7 @@ submenu
 submenus
 subpart
 subparts
+subtextual
 subvocalization
 sui generis
 sui juris
@@ -390,6 +487,7 @@ summa cum laude
 superactivity
 supercritical
 supercriticality
+supermicron
 supersensitive
 supersymmetric
 supersymmetry
@@ -398,6 +496,7 @@ suppressively
 surreally
 switchgear
 Symbian
+symplectic
 tabula rasa
 taskbar
 taskbars
@@ -406,10 +505,17 @@ teensy-weensy
 telematics
 tensiometer
 tensiometers
+termbase
+termbases
+Ternopil
 tesla
 thereunder
 timeous
 timeously
+tooltip
+tooltips
+touchpoint
+touchpoints
 traceability
 transitorily
 translatability
@@ -432,6 +538,10 @@ unclutter
 uncluttering
 unclutters
 uncomplicatedly
+underheat
+underheated
+underheating
+underheats
 underinflate
 underinflated
 underinflates
@@ -478,6 +588,7 @@ victimologies
 victimology
 viewport
 viewports
+Vinnytsia
 vis-à-vis
 volumetric
 walkie-talkie
@@ -491,6 +602,8 @@ weathertight
 weber
 webers
 well-known
+wherefrom
+whereinto
 wherethrough
 whereunto
 Wikipedia
@@ -502,3 +615,5 @@ workspaces
 workwear
 XMetaL
 XMLmind
+Zaporizhia
+Zhytomyr
