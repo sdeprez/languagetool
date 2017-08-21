@@ -10,7 +10,7 @@ deploy () {
   IMAGE="madumbo:languagetool-$1"
   echo "Building $IMAGE"
 
-  TARGET_DIR="languagetool-standalone/target/LanguageTool-3.8-SNAPSHOT/LanguageTool-3.8-SNAPSHOT/"
+  TARGET_DIR="languagetool-standalone/target/LanguageTool-3.9-SNAPSHOT/LanguageTool-3.9-SNAPSHOT/"
 
   echo "Removing $TARGET_DIR"
   rm -rf $TARGET_DIR
@@ -24,6 +24,9 @@ deploy () {
   docker build -t $IMAGE .
   docker tag $IMAGE 866953695171.dkr.ecr.eu-central-1.amazonaws.com/$IMAGE
   docker push 866953695171.dkr.ecr.eu-central-1.amazonaws.com/$IMAGE
+
+  echo "Image pushed"
+  echo "!!!!!!!!!!!!  DO NOT FORGET TO RESTART THE CORRESPONDING SERVICE  !!!!!!!!!!!!"
 }
 
 build () {
