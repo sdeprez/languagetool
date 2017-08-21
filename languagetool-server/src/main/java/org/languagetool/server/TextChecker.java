@@ -201,10 +201,6 @@ abstract class TextChecker {
       count++;
     }
     languageCheckCounts.put(lang.getShortCodeWithCountryAndVariant(), count);
-    print("Check done: " + text.length() + " chars, " + languageMessage + ", #" + count + ", " + referrer + ", "
-            + matches.size() + " matches, "
-            + (System.currentTimeMillis() - timeStart) + "ms, agent:" + agent
-            + ", " + messageSent);
   }
 
   protected void checkParams(Map<String, String> parameters) {
