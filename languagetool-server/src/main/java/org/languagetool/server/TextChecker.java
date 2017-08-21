@@ -52,15 +52,15 @@ abstract class TextChecker {
   protected abstract List<String> getEnabledRuleIds(Map<String, String> parameters);
   @NotNull
   protected abstract List<String> getDisabledRuleIds(Map<String, String> parameters);
-    
+
   protected static final int CONTEXT_SIZE = 40; // characters
 
   protected final HTTPServerConfig config;
 
   private static final String ENCODING = "UTF-8";
-  private static final int CACHE_STATS_PRINT = 500; // print cache stats every n cache requests 
-  
-  private final Map<String,Integer> languageCheckCounts = new HashMap<>(); 
+  private static final int CACHE_STATS_PRINT = 500; // print cache stats every n cache requests
+
+  private final Map<String,Integer> languageCheckCounts = new HashMap<>();
   private final boolean internalServer;
   private final LanguageIdentifier identifier;
   private final ExecutorService executorService;
@@ -70,14 +70,14 @@ abstract class TextChecker {
     this.config = config;
     this.internalServer = internalServer;
     this.identifier = new LanguageIdentifier();
-    this.executorService = Executors.newCachedThreadPool();
+    this.executorService = Executors.newFixedThreadPool(10);
     this.cache = config.getCacheSize() > 0 ? new ResultCache(config.getCacheSize()) : null;
   }
 
   void shutdownNow() {
     executorService.shutdownNow();
   }
-  
+
   void checkText(String text, HttpExchange httpExchange, Map<String, String> parameters) throws Exception {
     checkParams(parameters);
     long timeStart = System.currentTimeMillis();
@@ -91,6 +91,20 @@ abstract class TextChecker {
     Language lang = getLanguage(text, parameters, preferredVariants);
     String motherTongueParam = parameters.get("motherTongue");
     Language motherTongue = motherTongueParam != null ? Languages.getLanguageForShortCode(motherTongueParam) : null;
+
+    List<RuleMatch> emptyMatches = new ArrayList<RuleMatch>();
+    boolean onlyAutoDetect = parameters.get("onlyAutoDetect") != null ? parameters.get("onlyAutoDetect").equals("true") : false;
+    if (onlyAutoDetect) {
+      buildResponse(text, httpExchange, parameters, lang, motherTongue, emptyMatches, false, autoDetectLanguage);
+      return;
+    }
+
+    String allowedLanguages = parameters.get("allowedLanguages");
+    if (allowedLanguages != null && lang != null && !allowedLanguages.toLowerCase().contains(lang.getShortCode().toLowerCase())) {
+      buildResponse(text, httpExchange, parameters, lang, motherTongue, emptyMatches, false, autoDetectLanguage);
+      return;
+    }
+
     boolean useEnabledOnly = "yes".equals(parameters.get("enabledOnly")) || "true".equals(parameters.get("enabledOnly"));
     List<String> enabledRules = getEnabledRuleIds(parameters);
 
@@ -151,6 +165,15 @@ abstract class TextChecker {
         }
       }
     }
+
+    buildResponse(text, httpExchange, parameters, lang, motherTongue, matches, incompleteResult, autoDetectLanguage);
+  }
+
+  protected void buildResponse(
+      String text, HttpExchange httpExchange, Map<String, String> parameters,
+      Language lang, Language motherTongue, List<RuleMatch> matches,
+      boolean incompleteResult, boolean autoDetectLanguage
+  ) throws Exception {
 
     setHeaders(httpExchange);
     String response = getResponse(text, lang, motherTongue, matches, incompleteResult);
