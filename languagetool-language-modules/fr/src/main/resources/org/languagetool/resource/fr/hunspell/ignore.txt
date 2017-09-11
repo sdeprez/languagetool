@@ -11,3 +11,9 @@ jpg
 svg
 css
 html
+substring
+url
+urls
+http
+https
+dropdown

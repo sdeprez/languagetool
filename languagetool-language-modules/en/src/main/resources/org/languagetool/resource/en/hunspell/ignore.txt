@@ -81,3 +81,21 @@ youd
 youll
 youre
 youve
+# Words added manually and specific to the Web.
+docx
+doc
+xlsx
+xls
+pdf
+gif
+jpeg
+jpg
+svg
+css
+html
+substring
+url
+urls
+http
+https
+dropdown
