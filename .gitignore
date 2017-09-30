@@ -20,6 +20,6 @@ pom.xml.asc
 
 local_settings.py
 __pycache__
-python/*.txt
-python/*.sql
+python/**/*.txt
+python/**/*.sql
 tags
