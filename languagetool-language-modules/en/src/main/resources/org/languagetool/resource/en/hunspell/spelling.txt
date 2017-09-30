@@ -9,6 +9,9 @@ webhooks
 whitepaper
 drupal
 email
+mysql
+jquery
+anonymization
 # Works from en-wikipedia validated with en-wiktionnary
 isbn
 centre
