@@ -7209,7 +7209,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
           <token regexp="yes">masse|neuf|(?-i)Mach</token>
         </antipattern>
         <pattern>
-          <token regexp="yes">dizaines?|douzaines?|centaines?|milliers?|millions?|nombre|multitude|infinité|série</token>
+          <token regexp="yes">dizaines?|douzaines?|centaines?|milliers?|millions?|nombre|multitude|infinité</token>
           <token>de</token>
           <marker><token postag="[NJ] . s|V ppa . s" postag_regexp="yes"><exception postag="[NJ] . s?p|V ppa . s?p" postag_regexp="yes"/></token></marker>
         </pattern>
@@ -7228,7 +7228,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
           <token regexp="yes">onde|or|oxydation</token>
         </antipattern>
         <pattern>
-          <token regexp="yes">dizaines?|douzaines?|centaines?|milliers?|millions?|nombre|multitude|infinité|série</token>
+          <token regexp="yes">dizaines?|douzaines?|centaines?|milliers?|millions?|nombre|multitude|infinité</token>
           <token>d</token>
           <token regexp="yes">[’´'‛′‘]</token>
           <marker><token postag="[NJ] . s|V ppa . s" postag_regexp="yes"><exception postag="[NJ] . s?p|V ppa . s?p" postag_regexp="yes"/></token></marker>
