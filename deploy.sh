@@ -20,19 +20,20 @@ deploy () {
   cp config.properties $TARGET_DIR
   cd $TARGET_DIR
 
-  $(aws --region eu-central-1 ecr get-login)
+  eval $(aws --region eu-west-1 ecr get-login --no-include-email)
   docker build -t $IMAGE .
-  docker tag $IMAGE 866953695171.dkr.ecr.eu-central-1.amazonaws.com/$IMAGE
-  docker push 866953695171.dkr.ecr.eu-central-1.amazonaws.com/$IMAGE
+  docker tag $IMAGE 866953695171.dkr.ecr.eu-west-1.amazonaws.com/$IMAGE
+  docker push 866953695171.dkr.ecr.eu-west-1.amazonaws.com/$IMAGE
 
   echo "Image pushed"
-  echo "!!!!!!!!!!!!  DO NOT FORGET TO RESTART THE CORRESPONDING SERVICE  !!!!!!!!!!!!"
 }
+
 
 build () {
   echo "Building target"
   ./build.sh languagetool-standalone package -DskipTests
 }
+
 
 if validate "$1"
 then
@@ -40,4 +41,3 @@ then
 else
   echo "Invalid deploy mode $1"
 fi
-
