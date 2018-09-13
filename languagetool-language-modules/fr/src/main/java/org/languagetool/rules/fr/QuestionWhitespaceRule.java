@@ -67,7 +67,7 @@ public class QuestionWhitespaceRule extends Rule {
     String prevToken = "";
     for (int i = 1; i < tokens.length; i++) {
       String token = tokens[i].getToken();
-      boolean isWhiteBefore = tokens[i].isWhitespaceBefore()
+      boolean isWhiteBefore = tokens[i].isWhitespaceBefore() || StringTools.isWhitespace(prevToken)
           || "\u00A0".equals(prevToken) || "\u202F".equals(prevToken);
       String msg = null;
       int fixLen = 0;
